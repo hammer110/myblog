@@ -1,0 +1,17 @@
+image: node:8.11.1
+
+pages:
+  cache:
+    paths:
+    - node_modules/
+
+  script:
+  - npm install hexo-cli -g
+  - npm install
+  - npm install hexo-deployer-rsync
+  - hexo deploy
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
